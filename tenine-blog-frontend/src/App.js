@@ -7,7 +7,7 @@ import Home from './components/Home';
 import Posts from './components/Posts';
 import Portfolio from './components/Portfolio';
 import Blog from './components/Blog';
-import Write from './components/Write';
+import Editor from './components/editor/Editorpage';
 
 import './App.css'
 
@@ -22,7 +22,7 @@ function App() {
           <Route exact path="/posts" component={Posts}/>
           <Route exact path="/portfolio" component={Portfolio}/>
           <Route exact path="/blog" component={Blog}/>
-          <Route exact path="/write" component={Write}/>
+          <Route exact path="/write" component={Editor}/>
         </Switch>
         </div>
         <Footer/>

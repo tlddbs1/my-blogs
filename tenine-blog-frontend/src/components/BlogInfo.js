@@ -5,7 +5,7 @@ class BlogInfo extends Component{
 
     handleClick = () => {
         const {onClick} = this.props;
-        onClick(this.props.info.id);
+        onClick(this.props.info.idx);
     };
 
     render() {

@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import BlogList from './BlogList';
-import Write from './Write';
 import {TiPencil} from 'react-icons/ti';
 import {Link} from 'react-router-dom';
+
+import Header from './Header';
+import Footer from './Footer';
 
 import '../assets/Blog.css';
 
@@ -36,13 +38,19 @@ class Blog extends Component{
     render() {
         return (
             <React.Fragment>
-                <BlogList info={this.state.info}
-                            onClick={this.handleClick}/>
-                <Link exact to="/Write" Component={Write}>
-                    <div className="write-btn">
-                        <TiPencil/>
+                <Header/>
+                <div className="contents">
+                    <div>
+                        <BlogList info={this.state.info}
+                                    onClick={this.handleClick}/>
+                        <Link exact='true' to="/editor">
+                            <div className="write-btn">
+                                <TiPencil/>
+                            </div>
+                        </Link>
                     </div>
-                </Link>
+                </div>
+                <Footer/>
             </React.Fragment>
         )
     }
