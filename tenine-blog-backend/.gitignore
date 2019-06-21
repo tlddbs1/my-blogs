@@ -30,9 +30,4 @@ HELP.md
 .vscode/
 
 ### properties ###
-<<<<<<< HEAD
 src/main/resources/*.properties
-=======
-*.properties
-application.properties
->>>>>>> f6b8f5bd4e7e4e116a1641febe54ccf397f17706
