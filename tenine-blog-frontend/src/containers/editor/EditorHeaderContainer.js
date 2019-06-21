@@ -18,9 +18,9 @@ class EditorHeaderContainer extends Component {
     }
 
     handleSubmit = async () => {
-        const {title , markdown , editorActions, history} = this.props;
-        const post = {title , body : markdown};
-
+        const {title , markdown , EditorActions, history} = this.props;
+        const post = {title , contents : markdown};
+        console.log(post);
         try{
             await EditorActions.writePost(post);
         }catch(err){
