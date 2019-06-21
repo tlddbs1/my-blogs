@@ -1,0 +1,41 @@
+.editor-header {
+    background: #e0d2f9;
+    height: 4rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    display: flex;
+    align-items: center;
+  
+    .submit {
+      margin-left: auto;
+    }
+
+    .btn_back{
+      background-color: #f35b5b;
+      width: 89px;
+      height: 40px;
+      line-height: 40px;
+      border: 0;
+      font-size: 15px;
+      font-weight: 800;
+      color: #ffffff;
+      border-radius: 5px;
+    }
+    .btn_back:hover{
+      background-color:#c16a6a
+    }
+    .btn_save{
+      background-color: #f35b5b;
+      width: 89px;
+      height: 40px;
+      line-height: 40px;
+      border: 0;
+      font-size: 15px;
+      font-weight: 800;
+      color: #ffffff;
+      border-radius: 5px;
+    }
+    .btn_save:hover{
+      background-color:#c16a6a
+    }
+  }

@@ -1,0 +1,1 @@
+package com.tenine.blog.domain;

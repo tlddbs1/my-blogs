@@ -1,0 +1,11 @@
+.Footer {
+    width: 1024px;
+    margin : 0 auto;
+    height:80px;
+}
+
+.copyright{
+    color:#9b9b9b;
+    font-size:14px;
+    line-height:80px;
+}
