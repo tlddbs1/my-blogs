@@ -30,4 +30,4 @@ HELP.md
 .vscode/
 
 ### properties ###
-*.properties
+src/main/resources/*.properties
