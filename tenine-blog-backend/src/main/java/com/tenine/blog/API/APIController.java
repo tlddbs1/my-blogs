@@ -22,25 +22,41 @@ public class APIController {
     public PostsRepository postsRepository;
 
     @GetMapping("/blog")
-    public  List<Posts> getMain(HttpServletRequest req,
+    public  List<Posts> getList(HttpServletRequest req,
                                 HttpServletResponse res){
         res.setHeader("Access-Control-Allow-Origin" , "*");
         List<Posts> list = postsRepository.findAll();
         return list;
     }
 
-    @PostMapping("/save")
-    public void saveBlog(HttpServletRequest req
+    @GetMapping("/blog/{idx}")
+    public Posts getOne(@PathVariable("idx") Long idx){
+        return postsRepository.getOne(idx);
+    }
+
+    @PostMapping("/blog")
+    public void postBlog(HttpServletRequest req
             , HttpServletResponse res
-            , @RequestBody PostsSaveDto postsSaveDto) {
-        res.setHeader("Access-Control-Allow-Origin" , "*");
-        res.setHeader("Access-Control-Allow-Methods" , "OPTIONS");
-        res.setHeader("Access-Control-Max-Age", "3600");
-        res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization, Content-Length, X-Requested-With");
+            , @RequestBody PostsSaveDto postsSaveDto
+            , @PathVariable("idx") Long idx) {
         res.setContentType("application/json");
         log.warn(">> input data posts ::" + postsSaveDto.getTitle());
+        postsSaveDto.setIdx(idx);
         postsRepository.save(postsSaveDto.toEntity());
+    }
 
+    @DeleteMapping("/blog/{idx}")
+    public void delete(@PathVariable("idx") Long idx){
+        postsRepository.deleteById(idx);
+    }
 
+    @PutMapping("/blog/{idx}")
+    public void putBlog(HttpServletRequest req
+                        , HttpServletResponse res
+                        , @RequestBody PostsSaveDto postsSaveDto
+                        , @PathVariable("idx") Long idx) {
+        log.warn(">> input data posts ::" + postsSaveDto.getTitle());
+        postsSaveDto.setIdx(idx);
+        postsRepository.save(postsSaveDto.toEntity());
     }
 }

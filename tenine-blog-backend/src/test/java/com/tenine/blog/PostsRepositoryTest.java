@@ -40,8 +40,14 @@ public class PostsRepositoryTest {
 
     @Test
     public void 블로그_글_수정(){
-       /* postsRepository.save(Posts.builder().title("안녕하세요")
+        postsRepository.save(Posts.builder().title("안녕하세요")
                                             .contents("룰루라라리")
-                                            .build());*/
+                                            .idx(3L)
+                                            .build());
+    }
+
+    @Test
+    public void 블로그_글_삭제(){
+        postsRepository.deleteById(3L);
     }
 }
