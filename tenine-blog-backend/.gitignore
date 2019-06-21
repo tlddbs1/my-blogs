@@ -29,9 +29,5 @@ HELP.md
 ### VS Code ###
 .vscode/
 
-
-###node_modules###
-/tenine/tenine-blog-frontend/node_modules
-
 ### properties ###
 *.properties
