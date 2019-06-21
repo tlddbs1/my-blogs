@@ -32,6 +32,9 @@ HELP.md
 ### properties ###
 *.properties
 
+### node_modules###
+node_modules/
+
 
 ### React ###
 package.json
