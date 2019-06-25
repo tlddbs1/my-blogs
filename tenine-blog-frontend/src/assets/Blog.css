@@ -23,3 +23,12 @@
     padding:0 10px;
     padding-top:100px;
   }
+
+  a{
+    text-decoration: none;
+    color: #5c5c5c;
+  }
+
+  img {
+      max-width:100%;
+  }

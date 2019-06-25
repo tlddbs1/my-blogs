@@ -1,5 +1,6 @@
 package com.tenine.blog.domain.posts;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.tenine.blog.domain.BaseTimeEntity;
 import lombok.*;
 
@@ -8,6 +9,7 @@ import javax.persistence.*;
 @Entity
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Table(name="posts")
 public class Posts extends BaseTimeEntity {
 

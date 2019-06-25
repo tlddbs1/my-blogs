@@ -14,7 +14,7 @@ class EditorHeaderContainer extends Component {
 
     handleBack = () => {
         const { history } = this.props;
-        history.back(); 
+        history.goBack();
     }
 
     handleSubmit = async () => {
@@ -22,7 +22,12 @@ class EditorHeaderContainer extends Component {
         const post = {title , contents : markdown};
         console.log(post);
         try{
-            await EditorActions.writePost(post);
+            await EditorActions.writePost(post)
+                                    .then(()=>{
+                                                const {idx} = this.props;
+                                                history.push(`/blog/${idx}`)
+                                            }
+                                    )
         }catch(err){
             console.log(err);
         }
@@ -44,6 +49,7 @@ export default connect(
     (state) =>({
         title : state.editor.get('title'),
         markdown : state.editor.get('markdown'),
+        idx : state.editor.get('postId')
     }),
     (dispatch)=>({
         EditorActions : bindActionCreators(EditorActions,dispatch)

@@ -5,6 +5,7 @@ import Home from 'components/Home';
 import Posts from 'components/Posts';
 import Portfolio from 'components/Portfolio';
 import Blog from 'components/Blog';
+import BlogDetailContainer from 'containers/BlogDetailContainer';
 import Editorpage from 'components/editor/Editorpage';
 
 import '../App.css'
@@ -21,6 +22,7 @@ class App extends Component {
               <Route exact path="/portfolio" component={Portfolio}/>
               <Route exact path="/blog" component={Blog}/>
               <Route exact path="/editor" component={Editorpage}/>
+              <Route path="/blog/:idx" component={BlogDetailContainer}/>
             </Switch>
             </Router>
           </div>

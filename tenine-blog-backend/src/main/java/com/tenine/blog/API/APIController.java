@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 public class APIController {
 
@@ -35,14 +35,14 @@ public class APIController {
     }
 
     @PostMapping("/blog")
-    public void postBlog(HttpServletRequest req
+    public Long postBlog(HttpServletRequest req
             , HttpServletResponse res
-            , @RequestBody PostsSaveDto postsSaveDto
-            , @PathVariable("idx") Long idx) {
+            , @RequestBody PostsSaveDto postsSaveDto) {
         res.setContentType("application/json");
         log.warn(">> input data posts ::" + postsSaveDto.getTitle());
-        postsSaveDto.setIdx(idx);
-        postsRepository.save(postsSaveDto.toEntity());
+        Posts posts = postsRepository.save(postsSaveDto.toEntity());
+        log.debug(">> posts :" + posts);
+        return posts.getIdx();
     }
 
     @DeleteMapping("/blog/{idx}")

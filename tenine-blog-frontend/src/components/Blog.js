@@ -31,10 +31,6 @@ class Blog extends Component{
         })
     }
 
-    handleClick = (id) => {
-        console.log("click! :: " + id)
-    }
-
     render() {
         return (
             <React.Fragment>
