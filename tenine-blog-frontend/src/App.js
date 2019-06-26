@@ -26,6 +26,9 @@ function App() {
         </Switch>
         </div>
         <Footer/>
+        <div className="login-overlay">
+          <div className="login-modal"></div>
+        </div>
       </div>
     </Router>
   );

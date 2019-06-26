@@ -1,0 +1,45 @@
+.login-overlay{
+    opacity: 0.8;
+    background-color:#8d8d8d;
+    min-width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    z-index:9998;
+    position: fixed;
+    display:none;
+}
+.login-modal{
+    position:fixed;
+    top:20%;
+    left:25%;
+    width:50%;
+    height:500px;
+    background-color: #ffffff;
+    opacity: 1;
+    z-index: 9999;
+    display:none;
+    .ipt-area{
+        text-align: center;
+        vertical-align: middle;
+        min-height: 100%;
+        margin-top: 100px;
+    }
+
+    .ipt-txt{
+        width:80%;
+        vertical-align: 20px;
+        border:0;
+        border-bottom:1px solid #e2e2e2;
+        outline:none;
+        font-size:30px;
+        margin:15px;
+    }
+    .btn_signin{
+        width:80%;
+        border:0;
+        height:50px;
+        background-color:#3dc4c4;
+        border-radius: 5px;
+    }
+}

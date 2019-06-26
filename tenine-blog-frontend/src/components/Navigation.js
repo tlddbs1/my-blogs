@@ -13,7 +13,7 @@ class Navigation extends Component {
             <div className="navBar">
                 <ul className="navigation">
                     <li><NavLink exact to="/" activeStyle={activeStyle}>HOME</NavLink></li>
-                    <li><NavLink exact to="/blog" activeStyle={activeStyle}>BLOG</NavLink></li>
+                    <li><NavLink to="/blog" activeStyle={activeStyle}>BLOG</NavLink></li>
                     <li><NavLink exact to="/portfolio" activeStyle={activeStyle}>PORTFOLIO</NavLink></li>
                     <li><NavLink exact to="/posts" activeStyle={activeStyle}>POSTS</NavLink></li>
                 </ul>

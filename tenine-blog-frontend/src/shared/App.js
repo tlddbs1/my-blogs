@@ -7,13 +7,14 @@ import Portfolio from 'components/Portfolio';
 import Blog from 'components/Blog';
 import BlogDetailContainer from 'containers/BlogDetailContainer';
 import Editorpage from 'components/editor/Editorpage';
+import Login from 'components/login/Login';
 
 import '../App.css'
 class App extends Component {
 
   render() {
     return (
-        
+      <React.Fragment>
         <div className="App">
           <Router>
             <Switch>
@@ -25,8 +26,10 @@ class App extends Component {
               <Route path="/blog/:idx" component={BlogDetailContainer}/>
             </Switch>
             </Router>
+            <Login/>
           </div>
-        
+
+      </React.Fragment>
       );
   }
 }
