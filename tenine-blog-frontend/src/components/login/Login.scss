@@ -7,7 +7,7 @@
     left:0;
     z-index:9998;
     position: fixed;
-    display:none;
+    display:block;
 }
 .login-modal{
     position:fixed;
@@ -18,7 +18,7 @@
     background-color: #ffffff;
     opacity: 1;
     z-index: 9999;
-    display:none;
+    display:block;
     .ipt-area{
         text-align: center;
         vertical-align: middle;

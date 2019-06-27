@@ -15,3 +15,8 @@ export const putPost = ({title, contents, idx}) => {
     axios.put('http://localhost:8080/blog' , {title , contents , idx});
 }
 
+export const signIn = ({id,password}) => {
+    console.log(id);
+    //return axios.post('http://localhost:8080/login' , {id, password});
+    return {id , password}
+}

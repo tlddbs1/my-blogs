@@ -1,51 +1,46 @@
 import React , {Component} from 'react';
 import './Login.scss';
+import LoginModule from './LoginModule';
+import * as api from 'api/api';
 
 class Login extends Component {
     state = {
         id : '',
-        password : ''
+        password : '',
+        show : false
     }
 
-    handleChange = (e) => {
-        e.preventDefault();
-        this.setState({
-            [e.target.name] : e.target.value
-        })
+    handleSubmit = (data) => {
+        console.log(data);
+        this.signIn(data);
     }
 
-    handleSubmit = (e) => {
-        e.preventDefault();
-        console.log(this.state);
+    signIn = async (data) => {
+        let userData;
+        try{
+            userData = await api.signIn(data);
+            console.log(userData);
+            this.setState({
+                ...data,
+                show:false
+            })
+            console.log(this.state);
+        }catch(err) {
+            alert(err);
+        }
     }
-
+    
     render() {
+        const {show} = this.state;
         return(
-            <React.Fragment>
-            <div className="login-overlay">
-
+            <div>
+                { show ? 
+                <LoginModule
+                    onChange={this.handleChange}
+                    onSubmit={this.handleSubmit}/>
+                : null
+                }
             </div>
-            <div className="login-modal">
-                <form onSubmit={this.handleSubmit}>
-                <div className="ipt-area">
-                    <input 
-                        className="ipt-txt"
-                        placeholder="input id"
-                        name="id"
-                        onChange={this.handleChange}
-                    />
-                    <input 
-                        type="password"
-                        className="ipt-txt"
-                        placeholder="input password"
-                        name="password"
-                        onChange={this.handleChange}
-                    />
-                    <button type="submit" className="btn_signin">SIGN IN</button>
-                </div>
-                </form>
-            </div>
-            </React.Fragment>
         )
     }
 }

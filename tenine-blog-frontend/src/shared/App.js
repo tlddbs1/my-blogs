@@ -28,7 +28,6 @@ class App extends Component {
             </Router>
             <Login/>
           </div>
-
       </React.Fragment>
       );
   }
